@@ -16,4 +16,8 @@ public class ChildService {
     public void saveAll(List<Child> parents) {
         childRepository.saveAll(parents);
     }
+
+    public List<Child> getChildren(Long parentId) {
+        return childRepository.findAllByParentIdOrderByIdAsc(parentId);
+    }
 }
