@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Event listener to populate data from resources into In-Mem SQL DB
+ */
 @Component
 public class ApplicationStartListener {
 

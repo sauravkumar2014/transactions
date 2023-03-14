@@ -7,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+/**
+ * Custom exception to return customized error code than 500 for every exception
+ */
 @ControllerAdvice(assignableTypes = {ParentController.class})
 public class CustomExceptionHandler {
 

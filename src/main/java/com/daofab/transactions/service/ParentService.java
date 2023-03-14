@@ -15,10 +15,19 @@ public class ParentService {
     @Autowired
     private ParentRepository parentRepository;
 
+    /**
+     * Saves all given parents in parents Table
+     * @param parents list of parent DTOs
+     */
     public void saveAll(List<Parent> parents) {
         parentRepository.saveAll(parents);
     }
 
+    /**
+     * Gets list of parents for given page
+     * @param pageable (Page number + Page size + Order By + Order by Direction) specification
+     * @return Parent DTO List Page
+     */
     public Page<Parent> getPaginatedParents(Pageable pageable) {
         return parentRepository.findAll(pageable);
     }

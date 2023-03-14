@@ -13,10 +13,19 @@ public class ChildService {
     @Autowired
     private ChildRepository childRepository;
 
-    public void saveAll(List<Child> parents) {
-        childRepository.saveAll(parents);
+    /**
+     * Saves all given children in child Table
+     * @param children
+     */
+    public void saveAll(List<Child> children) {
+        childRepository.saveAll(children);
     }
 
+    /**
+     * Gets list of children for parent sorted by Id
+     * @param parentId Associated Parent's ID
+     * @return List of Child DTOs
+     */
     public List<Child> getChildren(Long parentId) {
         return childRepository.findAllByParentIdOrderByIdAsc(parentId);
     }

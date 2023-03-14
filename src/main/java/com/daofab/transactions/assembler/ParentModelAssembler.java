@@ -7,6 +7,9 @@ import com.daofab.transactions.model.ParentModel;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 
+/**
+ * Class to convert our DTO to model for a separation layer between Database and View layer
+ */
 @Component
 public class ParentModelAssembler extends RepresentationModelAssemblerSupport<Parent, ParentModel> {
     public ParentModelAssembler() {

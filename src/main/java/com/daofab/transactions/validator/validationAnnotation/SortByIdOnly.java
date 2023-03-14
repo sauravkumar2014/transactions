@@ -8,6 +8,9 @@ import java.lang.annotation.*;
 
 import static java.lang.annotation.ElementType.*;
 
+/**
+ * Annotation to validate sort by parameter is restricted to only ID
+ */
 @Documented
 @Target({ANNOTATION_TYPE, TYPE, FIELD, PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)

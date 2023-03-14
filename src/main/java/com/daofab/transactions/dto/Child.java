@@ -6,6 +6,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
+/**
+ * Database Table Child's single row object depiction
+ */
 @Entity
 @Getter
 @Setter

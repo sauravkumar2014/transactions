@@ -7,6 +7,9 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * Database Table Parent's single row object depiction
+ */
 @Entity
 @Getter
 @Setter

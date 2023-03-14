@@ -28,10 +28,12 @@ public class ChildController {
 
     @GetMapping()
     public CollectionModel<ChildModel> getChildren(@RequestParam("parentId") Long parentId) {
+        // Get list of children from DB as DTO and convert to Model
         List<ChildModel> children = childService.getChildren(parentId).stream()
                 .map(childModelAssembler::toModel)
                 .collect(Collectors.toList());
 
+        // Populate hypermedia links
         return CollectionModel.of(children,
                 linkTo(methodOn(ChildController.class).getChildren(parentId))
                         .withSelfRel());

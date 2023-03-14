@@ -7,6 +7,10 @@ import lombok.NonNull;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
+
+/**
+ * Class to map database object to view model
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,6 +29,9 @@ public class ParentModel extends RepresentationModel<ParentModel> {
     @NonNull
     private Long totalAmount;
 
+    /**
+     * Derived from summation of child(one-to-many) relation in DB
+     */
     @NonNull
     private Long totalPaidAmount;
 }

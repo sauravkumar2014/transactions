@@ -35,6 +35,7 @@ public class ParentController {
     @GetMapping()
     public PagedModel<ParentModel> getPaginated(@SortByIdOnly() @PageableDefault(sort = "id", size = PAGE_SIZE) Pageable pageable) {
         Page<Parent> parentPage = parentService.getPaginatedParents(pageable);
+        // Convert DTO to model and populate hypermedia info
         return pagedParentAssembler.toModel(parentPage, parentModelAssembler);
     }
 }
