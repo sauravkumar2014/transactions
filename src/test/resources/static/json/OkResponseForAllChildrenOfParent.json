@@ -1,0 +1,1 @@
+{"_embedded":{"childModelList":[{"id":1,"sender":"ABC","receiver":"XYZ","totalAmount":200,"paidAmount":10},{"id":2,"sender":"ABC","receiver":"XYZ","totalAmount":200,"paidAmount":50}]},"_links":{"self":{"href":"http://localhost:7777/children?parentId=1"}}}
