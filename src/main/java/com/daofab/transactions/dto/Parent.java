@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -33,4 +34,21 @@ public class Parent {
 
     @OneToMany(mappedBy = "parent")
     private List<Child> children;
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Parent toCompare)) {
+            return false;
+        }
+
+        return toCompare.getId().equals(this.getId())
+                && toCompare.getSender().equals(this.getSender())
+                && toCompare.getReceiver().equals(this.getReceiver())
+                && toCompare.getTotalAmount().equals(this.getTotalAmount())
+                && toCompare.getChildren() == this.getChildren();
+    }
 }

@@ -28,10 +28,10 @@ public class ApplicationStartListener {
 
     private static final Logger logger = LoggerFactory.getLogger(ApplicationStartListener.class);
 
-    @Value("classpath:static/json/Parent.json")
+    @Value("${parent.data.location}")
     Resource parentResource;
 
-    @Value("classpath:static/json/Child.json")
+    @Value("${child.data.location}")
     Resource childResource;
 
     @Autowired

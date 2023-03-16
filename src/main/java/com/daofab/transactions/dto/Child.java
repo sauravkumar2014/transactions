@@ -30,4 +30,19 @@ public class Child {
     @ManyToOne
     @JoinColumn(name = "parentId", insertable=false, updatable=false)
     private Parent parent;
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Child toCompare)) {
+            return false;
+        }
+
+        return toCompare.getId().equals(this.getId())
+                && toCompare.getParentId().equals(this.getParentId())
+                && toCompare.getPaidAmount().equals(this.getPaidAmount());
+    }
 }
